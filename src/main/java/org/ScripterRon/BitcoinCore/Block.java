@@ -459,6 +459,9 @@ public class Block implements ByteSerializable {
         // The block hash must be less than or equal to the target difficulty (the difficulty increases
         // by requiring an increasing number of leading zeroes in the block hash)
         //
+
+        // MULTICHAIN: START
+        /*
         BigInteger target = getTargetDifficultyAsInteger();
         if (target.signum() <= 0 || target.compareTo(NetParams.PROOF_OF_WORK_LIMIT) > 0)
             throw new VerificationException("Target difficulty is not valid",
@@ -467,6 +470,9 @@ public class Block implements ByteSerializable {
         if (hash.compareTo(target) > 0)
             throw new VerificationException("Block hash is higher than target difficulty",
                                             RejectMessage.REJECT_INVALID, blockHash);
+        */
+        // MULTICHAIN: END
+
         //
         // Verify the block timestamp
         //

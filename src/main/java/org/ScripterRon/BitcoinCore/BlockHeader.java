@@ -15,7 +15,9 @@
  */
 package org.ScripterRon.BitcoinCore;
 
+import javax.xml.bind.DatatypeConverter;
 import java.io.EOFException;
+import java.io.PrintStream;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -163,6 +165,9 @@ public class BlockHeader implements ByteSerializable {
         //
         if (doVerify) {
             BigInteger target = Utils.decodeCompactBits(targetDifficulty);
+
+            // MULTICHAIN: START
+            /*
             if (target.signum() <= 0 || target.compareTo(NetParams.PROOF_OF_WORK_LIMIT) > 0)
                 throw new VerificationException("Target difficulty is not valid",
                                                 RejectMessage.REJECT_INVALID, blockHash);
@@ -170,6 +175,9 @@ public class BlockHeader implements ByteSerializable {
             if (hash.compareTo(target) > 0)
                 throw new VerificationException("Block hash is higher than target difficulty",
                                                 RejectMessage.REJECT_INVALID, blockHash);
+            */
+            // MULTICHAIN: END
+
             //
             // Verify the block timestamp
             //

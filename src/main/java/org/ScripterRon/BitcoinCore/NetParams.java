@@ -86,8 +86,9 @@ public class NetParams {
     public static final long ALLOWED_TIME_DRIFT = 2 * 60 * 60;
 
     /** Production network genesis block */
-    public static final String GENESIS_BLOCK_PRODNET =
-                    "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f";
+    // MULTICHAIN: START
+    public static final String GENESIS_BLOCK_PRODNET = System.getProperty("multichain.genesis.blockhash");
+    // MULTICHAIN; END
 
     /** Test network genesis block */
     public static final String GENESIS_BLOCK_TESTNET =
@@ -97,7 +98,9 @@ public class NetParams {
     public static String GENESIS_BLOCK_HASH = GENESIS_BLOCK_PRODNET;
 
     /** Production network genesis block time */
-    public static final long GENESIS_TIME_PRODNET = 0x495fab29L;
+    // MULTICHAIN: START
+    public static final long GENESIS_TIME_PRODNET = Long.parseLong(System.getProperty("multichain.genesis.blocktime"));
+    // MULTICHAIN; END
 
     /** Test network genesis block time */
     public static final long GENESIS_TIME_TESTNET = 1296688602L;

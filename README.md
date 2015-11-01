@@ -1,3 +1,15 @@
+BitcoinCore-multichain
+======================
+
+This is a patched version of BitcoinCore which supports private blockchains created by MultiChain, where the blockchain is configured to behave like Bitcoin's.
+
+Changes are:
+- Disable block target verification
+- Remove some hard-coded genesis block values related to Bitcoin and instead get from JVM system properties, so that a client such as BitcoinWallet can set them.
+
+Use this version of BitcoinCore with a patched version of Scripter Ron's BitcoinWallet: https://github.com/bitcartel/BitcoinWallet-multichain
+
+
 BitcoinCore
 ===========
 

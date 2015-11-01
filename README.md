@@ -7,7 +7,12 @@ Changes are:
 - Disable block target verification
 - Remove some hard-coded genesis block values related to Bitcoin and instead get from JVM system properties, so that a client such as BitcoinWallet can set them.
 
-Use this version of BitcoinCore with a patched version of Scripter Ron's BitcoinWallet: https://github.com/bitcartel/BitcoinWallet-multichain
+To use this version, a client should set the JVM properties:
+multichain.genesis.blockhash
+multichain.genesis.blocktime
+
+For more information on these values, see a patched version of Scripter Ron's BitcoinWallet:
+https://github.com/bitcartel/BitcoinWallet-multichain/tree/multichain
 
 
 BitcoinCore
